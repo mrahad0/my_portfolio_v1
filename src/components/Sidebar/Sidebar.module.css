@@ -1,0 +1,341 @@
+/* === Sidebar === */
+.sidebar {
+  width: var(--sidebar-width);
+  height: 96vh;
+  position: fixed;
+  top: 18px;
+  left: 18px;
+  z-index: 50;
+  border: 0.75px solid var(--border-color);
+  -webkit-backdrop-filter: blur(15px);
+  backdrop-filter: blur(15px);
+  background: linear-gradient(
+    180deg,
+    rgba(0, 163, 255, 0.06) 0%,
+    rgba(0, 163, 255, 0.02) 100%
+  );
+  transition: var(--transition);
+  animation: slideInLeft 0.5s ease-out;
+}
+
+.sidebarInner {
+  padding: 34px 28px 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  width: 100%;
+}
+
+/* Logo Row */
+.logoRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.logoLeft {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logoIcon {
+  -webkit-backdrop-filter: blur(0px);
+  backdrop-filter: blur(0px);
+  background: linear-gradient(
+    -90deg,
+    rgba(0, 170, 255, 0.04) 0%,
+    rgba(0, 170, 255, 0.02) 100%
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 55px;
+  width: 60px;
+  border: 0.75px solid var(--border-color);
+  color: var(--primary);
+  transition: var(--transition);
+}
+
+.logoIcon:hover {
+  border-color: rgba(0, 170, 255, 0.2);
+  background: linear-gradient(
+    -90deg,
+    rgba(0, 170, 255, 0.08) 0%,
+    rgba(0, 170, 255, 0.04) 100%
+  );
+}
+
+.logoText {
+  display: block;
+  color: #c0c0c0;
+  font-size: 16px;
+  text-transform: uppercase;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+}
+
+.logoText:hover {
+  color: var(--heading-color);
+}
+
+.clock {
+  color: #c0c0c0;
+  font-size: 20px;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Profile Card */
+.profileCard {
+  margin-bottom: 50px;
+}
+
+.profileInner {
+  border: 0.75px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 22px 0 22px 22px;
+  -webkit-backdrop-filter: blur(0px);
+  backdrop-filter: blur(0px);
+  background: linear-gradient(
+    -90deg,
+    rgba(0, 170, 255, 0.04) 0%,
+    rgba(0, 170, 255, 0.02) 100%
+  );
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 1px 2px 0px;
+  transition: var(--transition);
+}
+
+.profileInner:hover {
+  border-color: rgba(0, 170, 255, 0.15);
+}
+
+.avatarBox {
+  border: 0.5px solid var(--border-color);
+  width: 62px;
+  height: 62px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  overflow: hidden;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 170, 255, 0.1) 0%,
+    rgba(0, 170, 255, 0.02) 100%
+  );
+}
+
+.avatarPlaceholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 170, 255, 0.15) 0%,
+    rgba(0, 170, 255, 0.05) 100%
+  );
+  color: var(--primary);
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.avatarBox img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.profileName {
+  color: var(--heading-color);
+  font-size: 16px;
+  margin: 0 0 6px;
+  line-height: 1;
+  font-weight: 500;
+}
+
+.profileRole {
+  font-size: 12px;
+  margin: 0 0 6px;
+  color: var(--body-color);
+  font-weight: 300;
+  line-height: 1;
+}
+
+.profileLocation {
+  font-size: 11px;
+  color: var(--body-color);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  line-height: 1;
+}
+
+.profileLocation svg {
+  color: var(--primary);
+  flex-shrink: 0;
+}
+
+/* Navigation */
+.nav {
+  flex: 1;
+}
+
+.navList {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.navLink {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 18px;
+  color: var(--body-color);
+  font-size: 14px;
+  font-weight: 400;
+  transition: var(--transition);
+  position: relative;
+  border: 0.75px solid transparent;
+}
+
+.navLink:hover {
+  color: var(--heading-color);
+  background: linear-gradient(
+    -90deg,
+    rgba(0, 170, 255, 0.04) 0%,
+    rgba(0, 170, 255, 0.02) 100%
+  );
+  border-color: var(--border-color);
+}
+
+.navLinkActive {
+  color: var(--primary);
+  background: linear-gradient(
+    -90deg,
+    rgba(0, 170, 255, 0.06) 0%,
+    rgba(0, 170, 255, 0.03) 100%
+  );
+  border-color: rgba(0, 170, 255, 0.1);
+}
+
+.navLinkActive::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 2px;
+  height: 60%;
+  background: var(--primary);
+  border-radius: 0 2px 2px 0;
+}
+
+.navIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+}
+
+.navTitle {
+  font-size: 14px;
+}
+
+/* Bottom Section */
+.sidebarBottom {
+  padding-top: 20px;
+  border-top: 0.75px solid var(--border-color);
+}
+
+.socialLinks {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.socialLink {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 0.75px solid var(--border-color);
+  color: var(--body-color);
+  transition: var(--transition);
+  background: transparent;
+}
+
+.socialLink:hover {
+  color: var(--primary);
+  border-color: rgba(0, 170, 255, 0.2);
+  background: rgba(0, 170, 255, 0.05);
+}
+
+.copyright {
+  font-size: 11px;
+  color: #555;
+  font-weight: 300;
+}
+
+/* Mobile Toggle */
+.mobileToggle {
+  display: none;
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  z-index: 100;
+  width: 45px;
+  height: 45px;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 170, 255, 0.05);
+  border: 0.75px solid var(--border-color);
+  color: var(--heading-color);
+  cursor: pointer;
+  -webkit-backdrop-filter: blur(15px);
+  backdrop-filter: blur(15px);
+}
+
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 40;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .sidebar {
+    left: -100%;
+    top: 0;
+    height: 100vh;
+    width: 300px;
+    z-index: 60;
+  }
+
+  .sidebarOpen {
+    left: 0;
+  }
+
+  .mobileToggle {
+    display: flex;
+  }
+
+  .overlay {
+    display: block;
+  }
+}

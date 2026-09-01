@@ -1,0 +1,112 @@
+.hero {
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding: 60px 0 40px;
+  overflow: hidden;
+}
+
+.heroContent {
+  position: relative;
+  z-index: 2;
+  max-width: 700px;
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.subtitleWrap {
+  margin-bottom: 28px;
+}
+
+.heroTitle {
+  font-size: clamp(36px, 5vw, 56px);
+  font-weight: 600;
+  line-height: 1.15;
+  color: var(--heading-color);
+  margin-bottom: 24px;
+  letter-spacing: -0.5px;
+}
+
+.highlight {
+  background: linear-gradient(135deg, var(--primary), #7c3aed);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.heroDesc {
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--body-color);
+  margin-bottom: 36px;
+  max-width: 520px;
+}
+
+.heroCta {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+/* Decorative elements */
+.heroDecor {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.decorLine {
+  position: absolute;
+  top: 20%;
+  right: 10%;
+  width: 200px;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(0, 170, 255, 0.15),
+    transparent
+  );
+  transform: rotate(-30deg);
+  animation: pulse 4s ease-in-out infinite;
+}
+
+.decorDot {
+  position: absolute;
+  top: 30%;
+  right: 20%;
+  width: 6px;
+  height: 6px;
+  background: var(--primary);
+  border-radius: 50%;
+  opacity: 0.4;
+  animation: pulse 3s ease-in-out infinite;
+  animation-delay: 0.5s;
+}
+
+.decorCircle {
+  position: absolute;
+  bottom: 20%;
+  right: 5%;
+  width: 120px;
+  height: 120px;
+  border: 0.75px solid rgba(0, 170, 255, 0.08);
+  border-radius: 50%;
+  animation: pulse 5s ease-in-out infinite;
+  animation-delay: 1s;
+}
+
+@media (max-width: 768px) {
+  .hero {
+    min-height: 60vh;
+    padding: 40px 0 30px;
+  }
+
+  .heroTitle {
+    font-size: 32px;
+  }
+}

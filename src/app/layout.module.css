@@ -1,0 +1,20 @@
+.appLayout {
+  display: flex;
+  min-height: 100vh;
+}
+
+.mainContent {
+  margin-left: calc(var(--sidebar-width) + 18px);
+  width: calc(100% - var(--sidebar-width) - 18px);
+  padding: 25px;
+  min-height: 100vh;
+}
+
+@media (max-width: 768px) {
+  .mainContent {
+    margin-left: 0;
+    width: 100%;
+    padding: 15px;
+    padding-top: 80px;
+  }
+}

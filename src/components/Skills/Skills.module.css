@@ -1,0 +1,121 @@
+.skills {
+  padding: 40px 0;
+}
+
+.sectionHeader {
+  margin-bottom: 30px;
+}
+
+.sectionTitle {
+  font-size: 28px;
+  font-weight: 600;
+  margin-top: 16px;
+  color: var(--heading-color);
+}
+
+.skillsLayout {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 30px;
+}
+
+/* Skill bars */
+.skillBars {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.skillItem {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.skillInfo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.skillName {
+  font-size: 13px;
+  color: var(--heading-color);
+  font-weight: 400;
+}
+
+.skillPercent {
+  font-size: 12px;
+  color: var(--primary);
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+}
+
+.skillTrack {
+  height: 4px;
+  background: rgba(252, 252, 252, 0.05);
+  position: relative;
+  overflow: hidden;
+}
+
+.skillFill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--primary), #7c3aed);
+  transition: width 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  position: relative;
+}
+
+.skillFill::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: -2px;
+  width: 8px;
+  height: 8px;
+  background: var(--primary);
+  border-radius: 50%;
+  box-shadow: 0 0 8px rgba(0, 170, 255, 0.4);
+}
+
+/* Tech stack */
+.techStack {
+  border: 0.75px solid var(--border-color);
+  background: var(--card-bg);
+  padding: 28px;
+}
+
+.techTitle {
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 20px;
+  color: var(--heading-color);
+}
+
+.techTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.techTag {
+  font-size: 12px;
+  padding: 8px 16px;
+  border: 0.75px solid var(--border-color-light);
+  color: var(--body-color);
+  transition: var(--transition);
+  cursor: default;
+  background: transparent;
+}
+
+.techTag:hover {
+  border-color: rgba(0, 170, 255, 0.25);
+  color: var(--primary);
+  background: rgba(0, 170, 255, 0.05);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .skillsLayout {
+    grid-template-columns: 1fr;
+  }
+}

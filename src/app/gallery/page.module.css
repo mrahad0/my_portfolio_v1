@@ -1,0 +1,93 @@
+.galleryPage {
+  padding: 40px 0;
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.pageHeader {
+  margin-bottom: 40px;
+}
+
+.pageTitle {
+  font-size: 36px;
+  font-weight: 600;
+  margin-top: 16px;
+  margin-bottom: 12px;
+  color: var(--heading-color);
+}
+
+.pageDesc {
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--body-color);
+  max-width: 500px;
+}
+
+/* Masonry grid */
+.galleryGrid {
+  columns: 3;
+  column-gap: 16px;
+}
+
+.galleryItem {
+  break-inside: avoid;
+  margin-bottom: 16px;
+  border: 0.75px solid var(--border-color);
+  height: 220px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.galleryItem.tall {
+  height: 320px;
+}
+
+.galleryItem:hover {
+  border-color: rgba(0, 170, 255, 0.15);
+  transform: scale(1.02);
+}
+
+.galleryOverlay {
+  padding: 20px;
+  width: 100%;
+  background: linear-gradient(transparent, rgba(4, 4, 4, 0.8));
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: var(--transition);
+}
+
+.galleryItem:hover .galleryOverlay {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.galleryNumber {
+  font-size: 14px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+.galleryTitle {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--heading-color);
+}
+
+@media (max-width: 1024px) {
+  .galleryGrid {
+    columns: 2;
+  }
+}
+
+@media (max-width: 600px) {
+  .galleryGrid {
+    columns: 1;
+  }
+}

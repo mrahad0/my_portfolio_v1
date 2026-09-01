@@ -1,0 +1,31 @@
+.footer {
+  padding: 30px 0 20px;
+  margin-top: 40px;
+  border-top: 0.75px solid var(--border-color);
+}
+
+.footerInner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.copyright {
+  font-size: 12px;
+  color: #555;
+  font-weight: 300;
+}
+
+.builtWith {
+  font-size: 12px;
+  color: #555;
+  font-weight: 300;
+}
+
+.heart {
+  color: var(--primary);
+  display: inline-block;
+  animation: pulse 2s ease-in-out infinite;
+}

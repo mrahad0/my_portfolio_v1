@@ -1,0 +1,203 @@
+.aboutPage {
+  padding: 40px 0;
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.pageHeader {
+  margin-bottom: 40px;
+}
+
+.pageTitle {
+  font-size: 36px;
+  font-weight: 600;
+  margin-top: 16px;
+  color: var(--heading-color);
+}
+
+/* Bio Section */
+.bioSection {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 30px;
+  margin-bottom: 50px;
+}
+
+.bioContent {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.bioText {
+  font-size: 14px;
+  line-height: 1.8;
+  color: var(--body-color);
+}
+
+/* Personal Info */
+.personalInfo {
+  border: 0.75px solid var(--border-color);
+  background: var(--card-bg);
+  padding: 28px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  align-content: start;
+}
+
+.infoItem {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.infoLabel {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--primary);
+  font-weight: 500;
+}
+
+.infoValue {
+  font-size: 14px;
+  color: var(--heading-color);
+  font-weight: 400;
+}
+
+/* Timeline */
+.timelineSection {
+  margin-bottom: 40px;
+}
+
+.timelineHeader {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 28px;
+}
+
+.timelineIcon {
+  color: var(--primary);
+}
+
+.sectionTitle {
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--heading-color);
+}
+
+.timeline {
+  position: relative;
+  padding-left: 30px;
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 6px;
+  top: 8px;
+  bottom: 8px;
+  width: 1px;
+  background: linear-gradient(
+    180deg,
+    var(--primary),
+    rgba(0, 170, 255, 0.1)
+  );
+}
+
+.timelineItem {
+  position: relative;
+  margin-bottom: 24px;
+}
+
+.timelineItem:last-child {
+  margin-bottom: 0;
+}
+
+.timelineDot {
+  position: absolute;
+  left: -26px;
+  top: 8px;
+  width: 10px;
+  height: 10px;
+  background: var(--dark);
+  border: 2px solid var(--primary);
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.timelineContent {
+  border: 0.75px solid var(--border-color);
+  background: var(--card-bg);
+  padding: 22px;
+  transition: var(--transition);
+}
+
+.timelineContent:hover {
+  border-color: rgba(0, 170, 255, 0.15);
+}
+
+.timelineTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 10px;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.timelineTitle {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--heading-color);
+  margin-bottom: 4px;
+}
+
+.timelineCompany {
+  font-size: 13px;
+  color: var(--body-color);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.timelineCompany svg {
+  color: var(--primary);
+}
+
+.timelinePeriod {
+  font-size: 12px;
+  color: var(--body-color);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+  padding: 4px 12px;
+  border: 0.75px solid var(--border-color);
+  background: rgba(0, 170, 255, 0.03);
+}
+
+.timelinePeriod svg {
+  color: var(--primary);
+}
+
+.timelineDesc {
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--body-color);
+}
+
+@media (max-width: 768px) {
+  .bioSection {
+    grid-template-columns: 1fr;
+  }
+
+  .personalInfo {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .timelineTop {
+    flex-direction: column;
+  }
+}
