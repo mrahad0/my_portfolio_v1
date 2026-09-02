@@ -1,0 +1,32 @@
+.marqueeContainer {
+  display: flex;
+  overflow: hidden;
+  white-space: nowrap;
+  background: var(--card-bg);
+  border-top: 0.75px solid var(--border-color);
+  border-bottom: 0.75px solid var(--border-color);
+  padding: 20px 0;
+  margin: 20px 0 40px;
+}
+
+.marqueeContent {
+  display: flex;
+  animation: scrollLeft 15s linear infinite;
+}
+
+.marqueeContent span {
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  color: var(--heading-color);
+  padding: 0 30px;
+}
+
+@keyframes scrollLeft {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}

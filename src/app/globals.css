@@ -4,24 +4,20 @@
 
 /* === CSS Custom Properties === */
 :root {
-  --dark: #040404;
-  --dark-lighter: #0a0a0a;
-  --primary: #00aaff;
-  --primary-dim: rgba(0, 170, 255, 0.05);
-  --primary-glow: rgba(0, 170, 255, 0.15);
-  --body-color: #8e8e8e;
-  --heading-color: #f9f9f9;
-  --border-color: rgba(252, 252, 252, 0.05);
-  --border-color-light: rgba(252, 252, 252, 0.1);
-  --card-bg: radial-gradient(
-    51% 51% at 49% 48%,
-    rgba(253, 253, 253, 0.05) 0%,
-    rgba(253, 253, 253, 0) 100%
-  );
+  --dark: #050e17;
+  --dark-lighter: #0b1a2a;
+  --primary: #5bc6ff;
+  --primary-dim: rgba(91, 198, 255, 0.05);
+  --primary-glow: rgba(91, 198, 255, 0.15);
+  --body-color: #8395a7;
+  --heading-color: #ffffff;
+  --border-color: #162a3d;
+  --border-color-light: #1e3852;
+  --card-bg: #0b1a2a;
   --glass-bg: linear-gradient(
     -90deg,
-    rgba(0, 170, 255, 0.04) 0%,
-    rgba(0, 170, 255, 0.02) 100%
+    rgba(91, 198, 255, 0.04) 0%,
+    rgba(91, 198, 255, 0.02) 100%
   );
   --sidebar-width: 353px;
   --font-family: "DM Sans", sans-serif;

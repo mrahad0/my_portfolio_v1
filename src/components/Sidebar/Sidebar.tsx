@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import {
   Home,
@@ -104,9 +105,13 @@ export default function Sidebar() {
             <div className={styles.profileCard}>
               <div className={styles.profileInner}>
                 <div className={styles.avatarBox}>
-                  <div className={styles.avatarPlaceholder}>
-                    <span>MR</span>
-                  </div>
+                  <Image 
+                    src="/images/rahatul-profile.jpg" 
+                    alt="Md Rahatul Islam" 
+                    width={62} 
+                    height={62} 
+                    className={styles.profileImg} 
+                  />
                 </div>
                 <div className={styles.profileInfo}>
                   <h3 className={styles.profileName}>Md Rahatul Islam</h3>

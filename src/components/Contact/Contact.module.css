@@ -1,0 +1,144 @@
+.contactSection {
+  padding: 40px 0;
+}
+
+.sectionHeader {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+.sectionTitle {
+  font-size: 28px;
+  font-weight: 600;
+  color: var(--heading-color);
+}
+
+.contactGrid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 20px;
+}
+
+.formCard {
+  padding: 40px;
+  background: var(--card-bg);
+  border: 0.75px solid var(--border-color);
+  border-radius: 12px;
+}
+
+.contactForm {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+}
+
+.input, .textarea {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 16px 20px;
+  font-family: inherit;
+  font-size: 14px;
+  color: var(--heading-color);
+  outline: none;
+  transition: var(--transition);
+}
+
+.input::placeholder, .textarea::placeholder {
+  color: var(--body-color);
+  opacity: 0.6;
+}
+
+.input:focus, .textarea:focus {
+  border-color: var(--primary);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.submitBtn {
+  background: var(--primary);
+  color: #000;
+  border: none;
+  padding: 16px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: var(--transition);
+  margin-top: 10px;
+}
+
+.submitBtn:hover {
+  background: #fff;
+  color: #000;
+}
+
+.infoWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.infoCard {
+  background: var(--card-bg);
+  border: 0.75px solid var(--border-color);
+  border-radius: 12px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.iconBox {
+  width: 50px;
+  height: 50px;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary);
+  border: 1px solid var(--border-color-light);
+}
+
+.infoContent {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.infoLabel {
+  font-size: 12px;
+  color: var(--body-color);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.infoText {
+  font-size: 16px;
+  color: var(--heading-color);
+  font-weight: 500;
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+a.infoText:hover {
+  color: var(--primary);
+}
+
+@media (max-width: 768px) {
+  .contactGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .formCard {
+    padding: 24px;
+  }
+}

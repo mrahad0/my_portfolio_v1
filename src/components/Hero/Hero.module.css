@@ -1,112 +1,296 @@
-.hero {
-  min-height: 80vh;
+/* === Hero Layout (Bento Grid) === */
+.heroGrid {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 16px;
+  margin-bottom: 40px;
+  min-height: 380px;
+}
+
+/* --- Left Column: Image Card --- */
+.imageCard {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  height: 100%;
+  padding: 0;
+}
+
+.portraitImg {
+  object-fit: cover;
+  transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.imageCard:hover .portraitImg {
+  transform: scale(1.05);
+}
+
+/* --- Right Column Content --- */
+.rightContent {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Top Row */
+.topRow {
+  display: flex;
+  gap: 12px;
+  height: 55px;
+  padding: 6px;
+  border-radius: 12px;
+  align-items: stretch;
+}
+
+.availableBox,
+.dateBox,
+.contactBox {
   display: flex;
   align-items: center;
-  position: relative;
-  padding: 60px 0 40px;
-  overflow: hidden;
+  border-radius: 8px;
+  font-size: 11px;
+  color: var(--heading-color);
+  padding: 0 16px;
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  background: rgba(255, 255, 255, 0.02);
+  font-weight: 500;
 }
 
-.heroContent {
-  position: relative;
-  z-index: 2;
-  max-width: 700px;
-  animation: fadeInUp 0.8s ease-out;
+.availableBox {
+  flex: 1;
+  gap: 14px;
 }
 
-.subtitleWrap {
-  margin-bottom: 28px;
+.dateBox {
+  flex: 1.5;
+  gap: 8px;
+  color: var(--heading-color);
+  justify-content: center;
+}
+
+.dateBox svg {
+  color: var(--primary);
+  width: 14px;
+  height: 14px;
+}
+
+.contactBox {
+  flex: 0.6;
+  justify-content: center;
+  gap: 8px;
+  transition: var(--transition);
+  cursor: pointer;
+}
+
+.contactBox:hover {
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--primary);
+}
+
+.contactBox svg {
+  transition: transform var(--transition);
+}
+
+.contactBox:hover svg {
+  transform: translate(3px, -3px);
+}
+
+.statusDot {
+  width: 8px;
+  height: 8px;
+  background-color: #10b981;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(16, 185, 129, 0.8);
+  animation: pulse 1.5s infinite;
+}
+
+/* Bottom Row */
+.bottomRow {
+  display: flex;
+  gap: 16px;
+  flex: 1;
+}
+
+.bioCard {
+  flex: 2;
+  border-radius: 12px;
+  padding: 24px 30px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-color: #102230;
+}
+
+.subtitle {
+  font-size: 10px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #8395a7;
+  margin-bottom: 6px;
+  display: block;
 }
 
 .heroTitle {
-  font-size: clamp(36px, 5vw, 56px);
+  font-size: 32px;
   font-weight: 600;
-  line-height: 1.15;
+  line-height: 1.1;
   color: var(--heading-color);
-  margin-bottom: 24px;
-  letter-spacing: -0.5px;
-}
-
-.highlight {
-  background: linear-gradient(135deg, var(--primary), #7c3aed);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  margin-bottom: 16px;
+  letter-spacing: -1px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
 .heroDesc {
-  font-size: 15px;
+  font-size: 13px;
   line-height: 1.7;
-  color: var(--body-color);
-  margin-bottom: 36px;
-  max-width: 520px;
+  color: #8395a7;
+  max-width: 440px;
 }
 
-.heroCta {
-  display: flex;
-  gap: 14px;
-  flex-wrap: wrap;
-}
-
-/* Decorative elements */
-.heroDecor {
+.signatureBox {
   position: absolute;
-  top: 0;
-  right: 0;
+  bottom: 20px;
+  right: 30px;
+}
+
+.signaturePlaceholder {
+  width: 100px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Brush Script MT", cursive, sans-serif;
+  font-size: 20px;
+  color: #8395a7;
+  opacity: 0.3;
+  transform: rotate(-10deg);
+}
+
+/* Location Card */
+.locationCard {
+  flex: 1.1;
+  border-radius: 12px;
+  padding: 24px 30px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  border-color: #102230;
+}
+
+.locationTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 2;
+  gap: 10px;
+}
+
+.address, .countryTag {
+  display: flex;
+  align-items: center;
+  font-size: 12px;
+  color: var(--heading-color);
+  font-weight: 500;
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  background: rgba(255, 255, 255, 0.02);
+  padding: 10px 16px;
+  border-radius: 8px;
+  backdrop-filter: blur(8px);
+}
+
+.address {
+  flex: 1;
+}
+
+.countryTag {
+  gap: 8px;
+}
+
+.mapGraphic {
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 180px;
+  height: 180px;
+  pointer-events: none;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 0 40px rgba(91, 198, 255, 0.15); /* Centered soft glow */
+}
+
+.earthImage {
   width: 100%;
   height: 100%;
-  pointer-events: none;
-  z-index: 1;
-}
-
-.decorLine {
-  position: absolute;
-  top: 20%;
-  right: 10%;
-  width: 200px;
-  height: 1px;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(0, 170, 255, 0.15),
-    transparent
-  );
-  transform: rotate(-30deg);
-  animation: pulse 4s ease-in-out infinite;
-}
-
-.decorDot {
-  position: absolute;
-  top: 30%;
-  right: 20%;
-  width: 6px;
-  height: 6px;
-  background: var(--primary);
+  object-fit: cover;
   border-radius: 50%;
-  opacity: 0.4;
-  animation: pulse 3s ease-in-out infinite;
-  animation-delay: 0.5s;
+  animation: spinEarth 40s linear infinite;
+  mix-blend-mode: screen; /* Ensures black background becomes transparent */
 }
 
-.decorCircle {
-  position: absolute;
-  bottom: 20%;
-  right: 5%;
-  width: 120px;
-  height: 120px;
-  border: 0.75px solid rgba(0, 170, 255, 0.08);
-  border-radius: 50%;
-  animation: pulse 5s ease-in-out infinite;
-  animation-delay: 1s;
+@keyframes spinEarth {
+  from {
+    transform: scale(1.15) rotate(0deg);
+  }
+  to {
+    transform: scale(1.15) rotate(360deg);
+  }
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .heroGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .imageCard {
+    height: 400px;
+  }
 }
 
 @media (max-width: 768px) {
-  .hero {
-    min-height: 60vh;
-    padding: 40px 0 30px;
+  .topRow {
+    flex-direction: column;
+    height: auto;
   }
+  
+  .availableBox, .dateBox, .contactBox {
+    padding: 16px 20px;
+  }
+  
+  .bottomRow {
+    flex-direction: column;
+  }
+  
+  .signatureBox {
+    position: relative;
+    bottom: 0;
+    right: 0;
+    margin-top: 20px;
+    display: flex;
+    justify-content: flex-start;
+  }
+  
+  .locationCard {
+    min-height: 250px;
+  }
+}
 
-  .heroTitle {
-    font-size: 32px;
+@keyframes pulse {
+  0% {
+    transform: scale(0.9);
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.8);
+  }
+  70% {
+    transform: scale(1.15);
+    box-shadow: 0 0 0 12px rgba(16, 185, 129, 0);
+  }
+  100% {
+    transform: scale(0.9);
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0);
   }
 }

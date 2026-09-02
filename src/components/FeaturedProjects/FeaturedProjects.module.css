@@ -20,7 +20,7 @@
 
 .projectsGrid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 16px;
 }
 
@@ -39,32 +39,19 @@
 }
 
 .projectThumb {
-  height: 180px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  height: 240px;
   position: relative;
   overflow: hidden;
+  border-bottom: 0.75px solid var(--border-color);
 }
 
-.projectThumbInner {
-  width: 80px;
-  height: 80px;
-  border: 1px solid;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: var(--transition);
+.projectImage {
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-.projectCard:hover .projectThumbInner {
-  transform: scale(1.1) rotate(5deg);
-}
-
-.projectNumber {
-  font-size: 28px;
-  font-weight: 700;
-  font-variant-numeric: tabular-nums;
+.projectCard:hover .projectImage {
+  transform: scale(1.05);
 }
 
 .projectContent {

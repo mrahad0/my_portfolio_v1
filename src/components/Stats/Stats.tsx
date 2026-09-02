@@ -7,7 +7,6 @@ const stats = [
   { value: 3, suffix: "+", label: "Years Experience" },
   { value: 50, suffix: "+", label: "Projects Completed" },
   { value: 30, suffix: "+", label: "Happy Clients" },
-  { value: 10, suffix: "+", label: "Technologies" },
 ];
 
 function AnimatedCounter({
