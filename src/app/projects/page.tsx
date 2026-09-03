@@ -1,5 +1,6 @@
 import { ArrowRight, ArrowUpRight } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 import styles from "./page.module.css";
 import Footer from "@/components/Footer/Footer";
 import type { Metadata } from "next";
@@ -78,9 +79,9 @@ export default function ProjectsPage() {
                   <h3 className={styles.projectTitle}>{project.title}</h3>
                   <span className={styles.projectCategory}>{project.category}</span>
                 </div>
-                <button className={styles.projectLinkBtn}>
+                <Link href="/projects/retro-remix" className={styles.projectLinkBtn}>
                   <ArrowRight size={16} />
-                </button>
+                </Link>
               </div>
             </div>
           ))}

@@ -73,9 +73,9 @@ export default function FeaturedProjects() {
                   <h3 className={styles.projectTitle}>{project.title}</h3>
                   <span className={styles.projectCategory}>{project.category}</span>
                 </div>
-                <button className={styles.projectLinkBtn}>
+                <Link href="/projects/retro-remix" className={styles.projectLinkBtn}>
                   <ArrowRight size={16} />
-                </button>
+                </Link>
               </div>
             </div>
           ))}
