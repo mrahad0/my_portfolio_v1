@@ -6,6 +6,7 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 16px;
+  border-radius: 8px;
 }
 
 .statCard {
@@ -16,6 +17,7 @@
   transition: var(--transition);
   position: relative;
   overflow: hidden;
+  border-radius: 8px;
 }
 
 .statCard::before {

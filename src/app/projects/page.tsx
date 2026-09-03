@@ -1,7 +1,7 @@
-import { ArrowUpRight } from "lucide-react";
+import { ArrowRight, ArrowUpRight } from "lucide-react";
+import Image from "next/image";
 import styles from "./page.module.css";
 import Footer from "@/components/Footer/Footer";
-
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -9,125 +9,78 @@ export const metadata: Metadata = {
   description: "Explore my projects and work across web development, mobile apps, and UI/UX design.",
 };
 
-const categories = ["All", "Web", "Mobile", "Backend", "UI/UX"];
-
-const projects = [
+const baseProjects = [
   {
-    title: "E-Commerce Platform",
-    category: "Web",
-    description: "Full-featured e-commerce with payment integration and admin dashboard.",
-    tags: ["Next.js", "Node.js", "MongoDB"],
-    color: "#00aaff",
+    title: "Retro Remix",
+    category: "Ux Design",
+    image: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?auto=format&fit=crop&q=80&w=800&h=600",
   },
   {
-    title: "Task Management App",
-    category: "Mobile",
-    description: "Cross-platform mobile app with real-time collaboration features.",
-    tags: ["Flutter", "Firebase", "Dart"],
-    color: "#7c3aed",
+    title: "Mystical Meodows",
+    category: "Web Development",
+    image: "https://images.unsplash.com/photo-1661956602116-aa6865609028?auto=format&fit=crop&q=80&w=800&h=600",
   },
   {
-    title: "Analytics Dashboard",
-    category: "Web",
-    description: "Interactive analytics dashboard with data visualization and reporting.",
-    tags: ["React", "D3.js", "TypeScript"],
-    color: "#10b981",
+    title: "Cybernetic Dreams",
+    category: "Brand Marketing",
+    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=800&h=600",
   },
   {
-    title: "Social Media API",
-    category: "Backend",
-    description: "RESTful API with authentication, rate limiting, and documentation.",
-    tags: ["Express", "PostgreSQL", "Redis"],
-    color: "#f59e0b",
+    title: "Light Play",
+    category: "SEO",
+    image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&q=80&w=800&h=600",
   },
   {
-    title: "Fitness Tracker",
-    category: "Mobile",
-    description: "Health and fitness tracking app with workout plans and progress monitoring.",
-    tags: ["Flutter", "SQLite", "BLoC"],
-    color: "#ef4444",
+    title: "Synthwave Sympony",
+    category: "Social Media",
+    image: "https://images.unsplash.com/photo-1542744094-3a31f272c490?auto=format&fit=crop&q=80&w=800&h=600",
   },
   {
-    title: "Design System",
-    category: "UI/UX",
-    description: "Comprehensive design system with reusable components and guidelines.",
-    tags: ["Figma", "Storybook", "CSS"],
-    color: "#8b5cf6",
-  },
-  {
-    title: "Chat Application",
-    category: "Web",
-    description: "Real-time messaging application with group chats, file sharing, and video calls.",
-    tags: ["Socket.io", "React", "WebRTC"],
-    color: "#06b6d4",
-  },
-  {
-    title: "CMS Platform",
-    category: "Backend",
-    description: "Headless CMS with content management, media library, and API generation.",
-    tags: ["Node.js", "GraphQL", "S3"],
-    color: "#d946ef",
+    title: "Mindscapes",
+    category: "Robotic Automation",
+    image: "https://images.unsplash.com/photo-1618410320928-17fc2ac3ab52?auto=format&fit=crop&q=80&w=800&h=600",
   },
 ];
+
+const projects = [...baseProjects, ...baseProjects, ...baseProjects];
 
 export default function ProjectsPage() {
   return (
     <>
       <section className={styles.projectsPage}>
-        <div className={styles.pageHeader}>
-          <span className="subtitle">My Work</span>
-          <h1 className={styles.pageTitle}>Projects</h1>
-          <p className={styles.pageDesc}>
-            A curated collection of my recent projects showcasing my skills in
-            web development, mobile apps, and design.
-          </p>
+        <div className={styles.headerBar}>
+          <div className={styles.headerTitleBtn}>
+            Projects <ArrowUpRight size={14} style={{ marginLeft: 6 }} />
+          </div>
+          
+          <div className={styles.marqueeContainer}>
+            <div className={styles.marqueeText}>
+              It is a long established fact that a reader will distracted by the readable content of a page when looking at its readable ⌘ It is a long established fact that a reader will distracted by the readable content of a page when looking ⌘ It is a long established fact that a reader will distracted by the readable content of a page when looking at its readable
+            </div>
+          </div>
         </div>
 
-        {/* Filter tabs */}
-        <div className={styles.filterTabs}>
-          {categories.map((cat) => (
-            <button
-              key={cat}
-              className={`${styles.filterBtn} ${cat === "All" ? styles.filterBtnActive : ""}`}
-            >
-              {cat}
-            </button>
-          ))}
-        </div>
-
-        {/* Projects Grid */}
         <div className={styles.projectsGrid}>
           {projects.map((project, i) => (
             <div key={i} className={styles.projectCard}>
-              <div
-                className={styles.projectThumb}
-                style={{
-                  background: `linear-gradient(135deg, ${project.color}18, ${project.color}05)`,
-                }}
-              >
-                <div
-                  className={styles.thumbCenter}
-                  style={{ borderColor: `${project.color}25` }}
-                >
-                  <span style={{ color: project.color, fontSize: 28, fontWeight: 700 }}>
-                    0{i + 1}
-                  </span>
-                </div>
+              <div className={styles.projectThumb}>
+                <Image 
+                  src={project.image} 
+                  alt={project.title}
+                  fill
+                  className={styles.projectImage}
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                />
               </div>
 
               <div className={styles.projectInfo}>
-                <span className={styles.projectCat}>{project.category}</span>
-                <h3 className={styles.projectTitle}>{project.title}</h3>
-                <p className={styles.projectDesc}>{project.description}</p>
-                <div className={styles.projectTags}>
-                  {project.tags.map((tag) => (
-                    <span key={tag} className={styles.tag}>{tag}</span>
-                  ))}
+                <div className={styles.projectText}>
+                  <h3 className={styles.projectTitle}>{project.title}</h3>
+                  <span className={styles.projectCategory}>{project.category}</span>
                 </div>
-              </div>
-
-              <div className={styles.projectArrow}>
-                <ArrowUpRight size={16} />
+                <button className={styles.projectLinkBtn}>
+                  <ArrowRight size={16} />
+                </button>
               </div>
             </div>
           ))}

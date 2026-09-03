@@ -44,8 +44,7 @@ export default function Services() {
   return (
     <section className={styles.services}>
       <div className={styles.sectionHeader}>
-        <span className="subtitle">What I Do</span>
-        <h2 className={styles.sectionTitle}>My Services</h2>
+        <h2 className={styles.titleBox}>My Services</h2>
       </div>
 
       <div className={styles.servicesGrid}>

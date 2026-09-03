@@ -4,10 +4,11 @@ import { Mail, MapPin } from "lucide-react";
 export default function Contact() {
   return (
     <section className={styles.contactSection} id="contact">
-      <div className={styles.sectionHeader}>
-        <span className="subtitle">Contact</span>
-        <h2 className={styles.sectionTitle}>Let&apos;s Work Together!</h2>
-      </div>
+      <div className={styles.sectionWrapper}>
+        <div className={styles.sectionHeader}>
+          <div className={styles.titleBox}>Contact</div>
+          <h2 className={styles.sectionTitle}>Let&apos;s Work Together!</h2>
+        </div>
 
       <div className={styles.contactGrid}>
         {/* Left: Contact Form */}
@@ -49,6 +50,7 @@ export default function Contact() {
               <span className={styles.infoText}>Dhaka, Bangladesh</span>
             </div>
           </div>
+        </div>
         </div>
       </div>
     </section>
