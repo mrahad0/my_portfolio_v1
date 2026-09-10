@@ -236,7 +236,7 @@
   width: 2px;
   height: 60%;
   background: var(--primary);
-  border-radius: 0 2px 2px 0;
+  border-radius: 0;
 }
 
 .navIcon {

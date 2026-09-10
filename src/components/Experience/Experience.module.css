@@ -55,7 +55,7 @@
   background: var(--card-bg);
   border: 0.75px solid var(--border-color);
   padding: 24px;
-  border-radius: 12px;
+  border-radius: 0;
   transition: var(--transition);
 }
 

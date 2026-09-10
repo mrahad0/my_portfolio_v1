@@ -27,7 +27,7 @@
 .blogCard {
   background: var(--card-bg);
   border: 0.75px solid var(--border-color);
-  border-radius: 12px;
+  border-radius: 0;
   overflow: hidden;
   transition: var(--transition);
   cursor: pointer;
@@ -62,7 +62,7 @@
   color: #fff;
   font-size: 11px;
   padding: 6px 12px;
-  border-radius: 20px;
+  border-radius: 0;
   border: 0.75px solid rgba(255, 255, 255, 0.1);
   text-transform: uppercase;
   letter-spacing: 1px;

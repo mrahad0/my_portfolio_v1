@@ -86,7 +86,7 @@ h6 {
 .common-box {
   border: 0.75px solid var(--border-color);
   background: var(--card-bg);
-  border-radius: 8px;
+  border-radius: 0;
 }
 
 .glass-card {
@@ -263,7 +263,7 @@ h6 {
 
 ::-webkit-scrollbar-thumb {
   background: rgba(0, 170, 255, 0.3);
-  border-radius: 10px;
+  border-radius: 0;
 }
 
 ::-webkit-scrollbar-thumb:hover {

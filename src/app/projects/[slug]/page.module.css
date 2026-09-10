@@ -11,7 +11,7 @@
 .box {
   border: 0.75px solid var(--border-color);
   background: var(--card-bg);
-  border-radius: 8px;
+  border-radius: 0;
 }
 
 /* Top Split Section */
@@ -25,12 +25,14 @@
   display: flex;
   flex-direction: column;
   gap: 24px;
+  min-width: 0;
 }
 
 .titleSection {
+  flex: 1;
   border: 0.75px solid var(--border-color);
   background: var(--card-bg);
-  border-radius: 8px;
+  border-radius: 0;
   padding: 30px;
 }
 
@@ -56,7 +58,7 @@
 .infoBox {
   border: 0.75px solid var(--border-color);
   background: var(--card-bg);
-  border-radius: 8px;
+  border-radius: 0;
   padding: 16px;
   display: flex;
   align-items: center;
@@ -69,7 +71,7 @@
   height: 40px;
   background: rgba(255, 255, 255, 0.03);
   border: 0.75px solid var(--border-color);
-  border-radius: 6px;
+  border-radius: 0;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -93,7 +95,7 @@
   border: 0.75px solid var(--border-color);
   background: var(--card-bg);
   padding: 10px;
-  border-radius: 8px;
+  border-radius: 0;
 }
 
 .headerTitleBtn {
@@ -106,7 +108,7 @@
   font-size: 12px;
   font-weight: 500;
   margin: 0;
-  border-radius: 4px;
+  border-radius: 0;
   white-space: nowrap;
   margin-right: 16px;
 }
@@ -117,6 +119,7 @@
   position: relative;
   display: flex;
   align-items: center;
+  min-width: 0;
   mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
   -webkit-mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
 }
@@ -140,10 +143,11 @@
 /* Images */
 .heroImageWrapper {
   width: 100%;
-  aspect-ratio: 16/9;
+  aspect-ratio: 21/9;
+  max-height: 500px;
   position: relative;
   border: 0.75px solid var(--border-color);
-  border-radius: 8px;
+  border-radius: 0;
   overflow: hidden;
   padding: 16px;
   background: var(--card-bg);
@@ -151,7 +155,7 @@
 
 .coverImg {
   object-fit: cover;
-  border-radius: 4px;
+  border-radius: 0;
   width: calc(100% - 32px) !important;
   height: calc(100% - 32px) !important;
   top: 16px !important;
@@ -168,7 +172,7 @@
 .textBox {
   border: 0.75px solid var(--border-color);
   background: var(--card-bg);
-  border-radius: 8px;
+  border-radius: 0;
   padding: 30px;
 }
 
@@ -181,7 +185,7 @@
   color: var(--heading-color);
   font-size: 12px;
   font-weight: 500;
-  border-radius: 4px;
+  border-radius: 0;
   margin-bottom: 20px;
 }
 
@@ -204,7 +208,7 @@
   position: relative;
   border: 0.75px solid var(--border-color);
   background: var(--card-bg);
-  border-radius: 8px;
+  border-radius: 0;
   padding: 16px;
   overflow: hidden;
 }
@@ -213,7 +217,7 @@
 .fullTextBox {
   border: 0.75px solid var(--border-color);
   background: var(--card-bg);
-  border-radius: 8px;
+  border-radius: 0;
   padding: 30px;
 }
 
@@ -230,7 +234,7 @@
   position: relative;
   border: 0.75px solid var(--border-color);
   background: var(--card-bg);
-  border-radius: 8px;
+  border-radius: 0;
   padding: 16px;
   overflow: hidden;
 }
@@ -254,11 +258,11 @@
   border: 0.75px solid var(--border-color);
   background: rgba(255, 255, 255, 0.01);
   transition: var(--transition);
-  border-radius: 8px;
+  border-radius: 0;
   display: flex;
   flex-direction: column;
-  padding: 16px;
-  gap: 16px;
+  padding: 12px;
+  gap: 12px;
 }
 
 .projectCard:hover {
@@ -269,10 +273,10 @@
 
 .projectThumb {
   width: 100%;
-  aspect-ratio: 4/3;
+  aspect-ratio: 1 / 1;
   overflow: hidden;
   border: 0.75px solid var(--border-color);
-  border-radius: 8px;
+  border-radius: 0;
   position: relative;
 }
 
@@ -308,6 +312,40 @@
   color: var(--body-color);
 }
 
+.projectYear {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(4px);
+  border: 0.75px solid rgba(255, 255, 255, 0.1);
+  padding: 4px 10px;
+  font-size: 11px;
+  color: #fff;
+  opacity: 0;
+  transition: opacity var(--transition);
+}
+
+.projectCard:hover .projectYear {
+  opacity: 1;
+}
+
+.defaultIcon {
+  display: block;
+}
+
+.hoverIcon {
+  display: none;
+}
+
+.projectCard:hover .defaultIcon {
+  display: none;
+}
+
+.projectCard:hover .hoverIcon {
+  display: block;
+}
+
 .projectLinkBtn {
   width: 32px;
   height: 32px;
@@ -319,7 +357,7 @@
   justify-content: center;
   cursor: pointer;
   transition: var(--transition);
-  border-radius: 4px;
+  border-radius: 0;
 }
 
 .projectCard:hover .projectLinkBtn {

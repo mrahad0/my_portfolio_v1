@@ -1,4 +1,4 @@
-import { ArrowRight, ArrowUpRight } from "lucide-react";
+import { ArrowRight, ArrowUpRight, ChevronRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import styles from "./page.module.css";
@@ -14,26 +14,31 @@ const baseProjects = [
   {
     title: "Retro Remix",
     category: "Ux Design",
+    year: "2024",
     image: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?auto=format&fit=crop&q=80&w=800&h=600",
   },
   {
     title: "Mystical Meodows",
     category: "Web Development",
+    year: "2024",
     image: "https://images.unsplash.com/photo-1661956602116-aa6865609028?auto=format&fit=crop&q=80&w=800&h=600",
   },
   {
     title: "Cybernetic Dreams",
     category: "Brand Marketing",
+    year: "2023",
     image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=800&h=600",
   },
   {
     title: "Light Play",
     category: "SEO",
+    year: "2023",
     image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&q=80&w=800&h=600",
   },
   {
     title: "Synthwave Sympony",
     category: "Social Media",
+    year: "2022",
     image: "https://images.unsplash.com/photo-1542744094-3a31f272c490?auto=format&fit=crop&q=80&w=800&h=600",
   },
   {
@@ -72,6 +77,9 @@ export default function ProjectsPage() {
                   className={styles.projectImage}
                   sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                 />
+                {project.year && (
+                  <span className={styles.projectYear}>{project.year}</span>
+                )}
               </div>
 
               <div className={styles.projectInfo}>
@@ -80,7 +88,8 @@ export default function ProjectsPage() {
                   <span className={styles.projectCategory}>{project.category}</span>
                 </div>
                 <Link href="/projects/retro-remix" className={styles.projectLinkBtn}>
-                  <ArrowRight size={16} />
+                  <ChevronRight size={16} className={styles.defaultIcon} />
+                  <ArrowRight size={16} className={styles.hoverIcon} />
                 </Link>
               </div>
             </div>

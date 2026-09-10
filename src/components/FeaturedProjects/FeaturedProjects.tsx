@@ -1,4 +1,4 @@
-import { ArrowUpRight, ArrowRight } from "lucide-react";
+import { ArrowUpRight, ChevronRight, ArrowRight } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 import styles from "./FeaturedProjects.module.css";
@@ -74,7 +74,8 @@ export default function FeaturedProjects() {
                   <span className={styles.projectCategory}>{project.category}</span>
                 </div>
                 <Link href="/projects/retro-remix" className={styles.projectLinkBtn}>
-                  <ArrowRight size={16} />
+                  <ChevronRight size={16} className={styles.defaultIcon} />
+                  <ArrowRight size={16} className={styles.hoverIcon} />
                 </Link>
               </div>
             </div>

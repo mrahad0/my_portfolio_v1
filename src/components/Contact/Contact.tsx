@@ -1,18 +1,15 @@
 import styles from "./Contact.module.css";
-import { Mail, MapPin } from "lucide-react";
+import { Map, Headphones } from "lucide-react";
 
 export default function Contact() {
   return (
     <section className={styles.contactSection} id="contact">
-      <div className={styles.sectionWrapper}>
-        <div className={styles.sectionHeader}>
-          <div className={styles.titleBox}>Contact</div>
-          <h2 className={styles.sectionTitle}>Let&apos;s Work Together!</h2>
-        </div>
-
+      <div className={styles.sectionHeader}>
+        <div className={styles.titleBox}>Contact</div>
+      </div>
       <div className={styles.contactGrid}>
         {/* Left: Contact Form */}
-        <div className={`${styles.formCard} common-box`}>
+        <div className={styles.formCard}>
           <form className={styles.contactForm}>
             <div className={styles.inputGroup}>
               <input type="text" placeholder="Name" className={styles.input} required />
@@ -24,33 +21,43 @@ export default function Contact() {
               <textarea placeholder="Message" className={styles.textarea} rows={5} required></textarea>
             </div>
             <button type="submit" className={styles.submitBtn}>
-              Send Message
+              Submit
             </button>
           </form>
         </div>
 
         {/* Right: Contact Info */}
-        <div className={styles.infoWrapper}>
-          <div className={`${styles.infoCard} common-box`}>
-            <div className={styles.iconBox}>
-              <Mail size={20} />
-            </div>
-            <div className={styles.infoContent}>
-              <span className={styles.infoLabel}>Email</span>
-              <a href="mailto:rahatul@example.com" className={styles.infoText}>rahatul@example.com</a>
-            </div>
-          </div>
+        <div className={styles.addressCard}>
+          <div className={styles.addressBadge}>Address</div>
           
-          <div className={`${styles.infoCard} common-box`}>
-            <div className={styles.iconBox}>
-              <MapPin size={20} />
+          <div className={styles.timeline}>
+            {/* Item 1 */}
+            <div className={styles.timelineItem}>
+              <div className={styles.iconCol}>
+                <div className={styles.iconBox}>
+                  <Map size={18} />
+                </div>
+                <div className={styles.connectorLine}></div>
+              </div>
+              <div className={styles.contentBox}>
+                <h4 className={styles.contentTitle}>Visit Me</h4>
+                <p className={styles.contentText}>16/9, Down Street, Edinburgh<br />United Kingdom</p>
+              </div>
             </div>
-            <div className={styles.infoContent}>
-              <span className={styles.infoLabel}>Address</span>
-              <span className={styles.infoText}>Dhaka, Bangladesh</span>
+            
+            {/* Item 2 */}
+            <div className={styles.timelineItem}>
+              <div className={styles.iconCol}>
+                <div className={styles.iconBox}>
+                  <Headphones size={18} />
+                </div>
+              </div>
+              <div className={styles.contentBox}>
+                <h4 className={styles.contentTitle}>Contact Info</h4>
+                <p className={styles.contentText}>+1-2847-899, +1-2847-899<br />yourcompanyemail@mail.com</p>
+              </div>
             </div>
           </div>
-        </div>
         </div>
       </div>
     </section>

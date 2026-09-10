@@ -1,4 +1,4 @@
-import { ArrowUpRight, ArrowRight, User, Calendar, Briefcase, Globe } from "lucide-react";
+import { ArrowUpRight, ChevronRight, ArrowRight, User, Calendar, Briefcase, Globe } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import styles from "./page.module.css";
@@ -61,12 +61,7 @@ export default function ProjectDetailsPage({ params }: { params: { slug: string 
                 <span className={styles.infoLabel}>Client:</span> David Henderson
               </div>
             </div>
-            <div className={styles.infoBox}>
-              <div className={styles.iconWrapper}><Calendar size={16} /></div>
-              <div className={styles.infoText}>
-                <span className={styles.infoLabel}>Date:</span> 12 March 2024
-              </div>
-            </div>
+
             <div className={styles.infoBox}>
               <div className={styles.iconWrapper}><Briefcase size={16} /></div>
               <div className={styles.infoText}>
@@ -92,16 +87,16 @@ export default function ProjectDetailsPage({ params }: { params: { slug: string 
           />
         </div>
 
-        {/* Features / Roles */}
+        {/* Problem / Solution */}
         <div className={styles.textGrid}>
           <div className={styles.textBox}>
-            <div className={styles.badge}>Feature</div>
+            <div className={styles.badge}>Problem</div>
             <p className={styles.boxText}>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters.</p>
             <br />
             <p className={styles.boxText}>As opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text.</p>
           </div>
           <div className={styles.textBox}>
-            <div className={styles.badge}>Roles</div>
+            <div className={styles.badge}>Solution</div>
             <p className={styles.boxText}>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters.</p>
             <br />
             <p className={styles.boxText}>As opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text.</p>
@@ -125,18 +120,6 @@ export default function ProjectDetailsPage({ params }: { params: { slug: string 
           </p>
         </div>
 
-        {/* Stacked Images */}
-        <div className={styles.stackedImages}>
-          <div className={styles.stackedImageWrapper}>
-             <Image src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&q=80&w=1200&h=600" fill alt="Stacked 1" className={styles.coverImg} />
-          </div>
-          <div className={styles.stackedImageWrapper}>
-             <Image src="https://images.unsplash.com/photo-1542744094-3a31f272c490?auto=format&fit=crop&q=80&w=1200&h=600" fill alt="Stacked 2" className={styles.coverImg} />
-          </div>
-          <div className={styles.stackedImageWrapper}>
-             <Image src="https://images.unsplash.com/photo-1618410320928-17fc2ac3ab52?auto=format&fit=crop&q=80&w=1200&h=600" fill alt="Stacked 3" className={styles.coverImg} />
-          </div>
-        </div>
 
         {/* Next Projects */}
         <div className={styles.nextProjectsSection}>
@@ -169,7 +152,8 @@ export default function ProjectDetailsPage({ params }: { params: { slug: string 
                     <span className={styles.projectCategory}>{project.category}</span>
                   </div>
                   <Link href="/projects/retro-remix" className={styles.projectLinkBtn}>
-                    <ArrowRight size={16} />
+                    <ChevronRight size={16} className={styles.defaultIcon} />
+                    <ArrowRight size={16} className={styles.hoverIcon} />
                   </Link>
                 </div>
               </div>

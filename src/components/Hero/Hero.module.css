@@ -4,13 +4,17 @@
   grid-template-columns: 280px 1fr;
   gap: 16px;
   margin-bottom: 40px;
-  min-height: 380px;
+  min-height: 480px;
+  padding: 24px;
+  border: 1px solid var(--border-color);
+  background: var(--dark);
+  border-radius: 0;
 }
 
 /* --- Left Column: Image Card --- */
 .imageCard {
   position: relative;
-  border-radius: 12px;
+  border-radius: 0;
   overflow: hidden;
   height: 100%;
   padding: 0;
@@ -38,7 +42,7 @@
   gap: 12px;
   height: 55px;
   padding: 6px;
-  border-radius: 12px;
+  border-radius: 0;
   align-items: stretch;
 }
 
@@ -47,7 +51,7 @@
 .contactBox {
   display: flex;
   align-items: center;
-  border-radius: 8px;
+  border-radius: 0;
   font-size: 11px;
   color: var(--heading-color);
   padding: 0 16px;
@@ -113,7 +117,7 @@
 
 .bioCard {
   flex: 2;
-  border-radius: 12px;
+  border-radius: 0;
   padding: 24px 30px;
   position: relative;
   display: flex;
@@ -172,7 +176,7 @@
 /* Location Card */
 .locationCard {
   flex: 1.1;
-  border-radius: 12px;
+  border-radius: 0;
   padding: 24px 30px;
   position: relative;
   overflow: hidden;
@@ -198,7 +202,7 @@
   border: 1px solid rgba(255, 255, 255, 0.03);
   background: rgba(255, 255, 255, 0.02);
   padding: 10px 16px;
-  border-radius: 8px;
+  border-radius: 0;
   backdrop-filter: blur(8px);
 }
 

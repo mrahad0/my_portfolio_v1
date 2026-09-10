@@ -3,24 +3,8 @@
   width: 100%;
 }
 
-.sectionWrapper {
-  border: 0.75px solid var(--border-color);
-  background: var(--card-bg);
-  padding: 24px;
-  border-radius: 8px;
-}
-
 .sectionHeader {
-  display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
   margin-bottom: 30px;
-}
-
-.sectionTitle {
-  font-size: 28px;
-  font-weight: 600;
-  color: var(--heading-color);
 }
 
 .titleBox {
@@ -28,17 +12,16 @@
   align-items: center;
   background: rgba(255, 255, 255, 0.03);
   border: 0.75px solid var(--border-color);
-  padding: 10px 16px;
+  padding: 10px 24px;
   color: var(--heading-color);
   font-size: 13px;
   font-weight: 500;
-  margin: 0;
-  border-radius: 4px;
+  border-radius: 0;
 }
 
 .contactGrid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 2fr 1fr;
   gap: 20px;
 }
 
@@ -46,7 +29,10 @@
   padding: 40px;
   background: var(--card-bg);
   border: 0.75px solid var(--border-color);
-  border-radius: 12px;
+  border-radius: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .contactForm {
@@ -63,11 +49,11 @@
 .input, .textarea {
   width: 100%;
   background: rgba(255, 255, 255, 0.02);
-  border: 1px solid var(--border-color);
-  border-radius: 8px;
+  border: 0.75px solid var(--border-color);
+  border-radius: 0;
   padding: 16px 20px;
   font-family: inherit;
-  font-size: 14px;
+  font-size: 13px;
   color: var(--heading-color);
   outline: none;
   transition: var(--transition);
@@ -75,7 +61,7 @@
 
 .input::placeholder, .textarea::placeholder {
   color: var(--body-color);
-  opacity: 0.6;
+  opacity: 0.7;
 }
 
 .input:focus, .textarea:focus {
@@ -84,84 +70,116 @@
 }
 
 .submitBtn {
-  background: var(--primary);
-  color: #000;
-  border: none;
+  background: rgba(255, 255, 255, 0.02);
+  color: var(--heading-color);
+  border: 0.75px solid var(--border-color);
   padding: 16px;
-  border-radius: 8px;
-  font-weight: 600;
-  font-size: 14px;
+  border-radius: 0;
+  font-weight: 500;
+  font-size: 13px;
   cursor: pointer;
   transition: var(--transition);
-  margin-top: 10px;
 }
 
 .submitBtn:hover {
-  background: #fff;
-  color: #000;
+  background: rgba(255, 255, 255, 0.06);
 }
 
-.infoWrapper {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.infoCard {
+.addressCard {
   background: var(--card-bg);
   border: 0.75px solid var(--border-color);
-  border-radius: 12px;
-  padding: 30px;
+  border-radius: 0;
+  padding: 40px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  gap: 16px;
-  flex: 1;
+}
+
+.addressBadge {
+  display: inline-flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.03);
+  border: 0.75px solid var(--border-color);
+  padding: 10px 24px;
+  color: var(--heading-color);
+  font-size: 13px;
+  font-weight: 500;
+  margin-bottom: 40px;
+  align-self: flex-start;
+}
+
+.timeline {
+  display: flex;
+  flex-direction: column;
+}
+
+.timelineItem {
+  display: flex;
+  gap: 24px;
+}
+
+.iconCol {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .iconBox {
-  width: 50px;
-  height: 50px;
-  background: rgba(255, 255, 255, 0.03);
-  border-radius: 8px;
+  width: 48px;
+  height: 48px;
+  border: 0.75px solid var(--border-color);
+  background: rgba(255, 255, 255, 0.02);
   display: flex;
   align-items: center;
   justify-content: center;
   color: var(--primary);
-  border: 1px solid var(--border-color-light);
+  flex-shrink: 0;
 }
 
-.infoContent {
+.connectorLine {
+  flex: 1;
+  width: 1px;
+  border-left: 1px dashed var(--border-color);
+  margin: 12px 0;
+  min-height: 40px;
+}
+
+.contentBox {
+  background: rgba(255, 255, 255, 0.02);
+  border: 0.75px solid var(--border-color);
+  padding: 24px;
+  flex: 1;
+  margin-bottom: 24px;
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  justify-content: center;
 }
 
-.infoLabel {
+.timelineItem:last-child .contentBox {
+  margin-bottom: 0;
+}
+
+.contentTitle {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--heading-color);
+  margin: 0 0 12px 0;
+}
+
+.contentText {
   font-size: 12px;
   color: var(--body-color);
-  text-transform: uppercase;
-  letter-spacing: 1px;
+  line-height: 1.8;
+  margin: 0;
 }
 
-.infoText {
-  font-size: 16px;
-  color: var(--heading-color);
-  font-weight: 500;
-  text-decoration: none;
-  transition: var(--transition);
-}
-
-a.infoText:hover {
-  color: var(--primary);
-}
-
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .contactGrid {
     grid-template-columns: 1fr;
   }
-  
-  .formCard {
+}
+
+@media (max-width: 768px) {
+  .formCard, .addressCard {
     padding: 24px;
   }
 }
